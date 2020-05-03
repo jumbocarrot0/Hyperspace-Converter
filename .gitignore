@@ -1,2 +1,4 @@
 
 Error.py
+*.pyc
+*.ftl
