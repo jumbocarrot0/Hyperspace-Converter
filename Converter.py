@@ -20,12 +20,12 @@ for mods in range(0, len(modFiles)):
 			print('Not an FTL mod.')
 		continue
 
-	for file in os.walk("Mod Source"):
+	for file in os.walk("ModSource"):
 		for x in range(0, len(file[2])):
 			os.remove(file[0]+'/'+file[2][x])
 	
 	with zipfile.ZipFile(modFiles[mods], 'r') as zip_ref:
-	    zip_ref.extractall('Mod Source')
+	    zip_ref.extractall('ModSource')
 		
 	for x in range(1, modFiles[mods].count('/')):
 		modFiles[mods] = modFiles[mods][:modFiles[mods].index('/')] + modFiles[mods][modFiles[mods].index('/')+1:]
@@ -38,14 +38,14 @@ for mods in range(0, len(modFiles)):
 		
 	blueprintFiles = []
 		
-	if os.path.exists("Mod Source/data/blueprints.xml.append") is True:
-		blueprintFiles.append("Mod Source/data/blueprints.xml.append")
+	if os.path.exists("ModSource/data/blueprints.xml.append") is True:
+		blueprintFiles.append("ModSource/data/blueprints.xml.append")
 		
-	if os.path.exists("Mod Source/data/dlcBlueprints.xml.append") is True:
-		blueprintFiles.append("Mod Source/data/dlcBlueprints.xml.append")
+	if os.path.exists("ModSource/data/dlcBlueprints.xml.append") is True:
+		blueprintFiles.append("ModSource/data/dlcBlueprints.xml.append")
 		
-	if os.path.exists("Mod Source/data/dlcBlueprintsOverwrite.xml.append") is True:
-		blueprintFiles.append("Mod Source/data/dlcBlueprintsOverwrite.xml.append")
+	if os.path.exists("ModSource/data/dlcBlueprintsOverwrite.xml.append") is True:
+		blueprintFiles.append("ModSource/data/dlcBlueprintsOverwrite.xml.append")
 	
 	
 	playerShipOrder = ['PLAYER_SHIP_HARD', 'PLAYER_SHIP_CIRCLE', 'PLAYER_SHIP_FED', 'PLAYER_SHIP_ENERGY', 'PLAYER_SHIP_MANTIS', 'PLAYER_SHIP_JELLY', 'PLAYER_SHIP_ROCK', 'PLAYER_SHIP_STEALTH', 'PLAYER_SHIP_CRYSTAL', 'PLAYER_SHIP_ANAEROBIC', 'PLAYER_SHIP_HARD_2', 'PLAYER_SHIP_CIRCLE_2', 'PLAYER_SHIP_FED_2', 'PLAYER_SHIP_ENERGY_2', 'PLAYER_SHIP_MANTIS_2', 'PLAYER_SHIP_JELLY_2', 'PLAYER_SHIP_ROCK_2', 'PLAYER_SHIP_STEALTH_2', 'PLAYER_SHIP_CRYSTAL_2', 'PLAYER_SHIP_ANAEROBIC_2', 'PLAYER_SHIP_HARD_3', 'PLAYER_SHIP_CIRCLE_3', 'PLAYER_SHIP_FED_3', 'PLAYER_SHIP_ENERGY_3', 'PLAYER_SHIP_MANTIS_3', 'PLAYER_SHIP_JELLY_3', 'PLAYER_SHIP_ROCK_3', 'PLAYER_SHIP_STEALTH_3']
@@ -94,7 +94,7 @@ for mods in range(0, len(modFiles)):
 						
 		tree.write(file)
 	
-	xml = open("Mod Source/data/hyperspace.xml.append", "w")
+	xml = open("ModSource/data/hyperspace.xml.append", "w")
 	xml.writelines('<ships>\n')
 	for x in range(0, len(modBasePlayerShipNames)):
 		if modBasePlayerShipNames[x] + '_2' in modPlayerShipNames:
@@ -111,7 +111,7 @@ for mods in range(0, len(modFiles)):
 	xml.writelines('</ships>\n\n')
 	xml.close()
 	
-	make_archive('Hyperspace ' + modname, 'zip', "Mod Source")
+	make_archive('Hyperspace ' + modname, 'zip', "ModSource")
 			
 	print("Archived")
 			
