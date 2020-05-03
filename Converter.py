@@ -13,6 +13,7 @@ print(str(modFiles))
 
 for mods in range(0, len(modFiles)):
 
+
 	if modFiles[mods][-4:] != '.ftl':
 		if modFiles[mods][-4:] == '.zip':
 			print('Not an FTL mod. Zip files are not accepted')
@@ -86,23 +87,26 @@ for mods in range(0, len(modFiles)):
 		
 		for child in root:
 			if child.tag == 'shipBlueprint':
-				for child2 in child:
-					if child2.tag == 'name':
-						modBasePlayerShipNames.append(child.attrib['name'] + '_' + child2.text)
-						child.set('name', modBasePlayerShipNames[-1])
-						break
+				if child.attrib['name'] in playerShipOrder:
+					modBasePlayerShipNames.append(str(modname) + '_' + child.attrib['name'])
+					modPlayerShips.append(child.attrib['name'])
+					child.set('name', modBasePlayerShipNames[-1])
+					continue
 						
 		tree.write(file)
 	
 	xml = open("ModSource/data/hyperspace.xml.append", "w")
 	xml.writelines('<ships>\n')
-	for x in range(0, len(modBasePlayerShipNames)):
-		if modBasePlayerShipNames[x] + '_2' in modPlayerShipNames:
+	for x in range(0, len(modPlayerShips)):
+		if modPlayerShips[x][:-2] in modPlayerShips:
+			continue
+			
+		if modPlayerShips[x] + '_2' in modPlayerShips:
 			typeB = True
 		else:
 			typeB = False
 		
-		if modBasePlayerShipNames[x] + '_3' in modPlayerShipNames:
+		if modPlayerShips[x] + '_3' in modPlayerShips:
 			typeC = True
 		else:
 			typeC = False
