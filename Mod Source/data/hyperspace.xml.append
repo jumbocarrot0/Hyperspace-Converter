@@ -1,0 +1,7 @@
+<ships>
+	<ship name="ETHERION_MOD_HYPER_PLAYER_SHIP_HARD" b="false" c="false"/>
+</ships>
+
+<titleScreen enabled="false"/>
+<console enabled="false"/>
+<hackingDroneFix enabled="true"/>

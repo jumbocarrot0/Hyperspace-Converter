@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shipBlueprint name="ETHERION_MOD_HYPER_PLAYER_SHIP_HARD" layout="ether" img="ether">
+	<class>Classe Sire</class>
+	<name>L'Etherion</name>
+	<desc>Premier prototype de classe Sire, l'Etherion est un vaisseau de voyage lancé pour contrer la rébellion avant d'être terminé. Il possède plusieurs équipement qui n'attendent qu'à être améliorés.</desc>
+	<systemList>
+		<artillery power="1" room="10" start="true" weapon="ARTILLERY_FED" img="room_artillery" />
+		<battery power="1" room="14" start="true" img="room_battery_9" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="11" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="2" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="1" room="1" start="false" img="room_drones_15" />
+		<engines power="3" room="13" start="true" img="room_engines_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="7" start="false" img="room_hacking_5" />
+		<medbay power="1" room="11" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="8" start="false" img="room_mind_9" />
+		<oxygen power="1" room="3" start="true" img="room_oxygen_9" />
+		<pilot power="1" room="0" start="true" img="room_pilot_2">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="4" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="1" room="6" start="true" img="room_shields">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="9" start="false" />
+		<weapons power="2" room="5" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="4" count="4">
+		<weapon name="LASER_BURST_1" />
+		<weapon name="LASER_BURST_1" />
+	</weaponList>
+	<droneList drones="5" count="3" />
+	<health amount="30" />
+	<maxPower amount="10" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="engi" />
+	<aug name="ADV_SCANNERS" />
+	<aug name="WEAPON_PREIGNITE" />
+	<aug name="ENERGY_SHIELD" />
+</shipBlueprint>
+
