@@ -3,3 +3,4 @@ Error.py
 *.pyc
 *.ftl
 ModSource/
+__pyache__
