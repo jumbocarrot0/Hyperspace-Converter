@@ -6,8 +6,6 @@ import zipfile
 from shutil import make_archive
 from pathlib import Path
 import xml.etree.ElementTree as ET
-
-print('Testing')
 	
 Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
 modFiles = list(askopenfilenames()) # show an "Open" dialog box and return the path to the selected file
